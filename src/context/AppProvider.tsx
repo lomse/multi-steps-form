@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { ACCEPT_SHIPMENTS, STEPS, IContainerState } from '../interfaces/Common'
-import { Provider, DEFAULT_STATE } from './Context'
+import { Provider, DEFAULT_STATE } from './AppContext'
 
 class AppProvider extends React.Component {
   state: Readonly<IContainerState> = DEFAULT_STATE
@@ -35,9 +35,7 @@ class AppProvider extends React.Component {
           handleInputChange: this.handleInputChange,
           goToStep: this.goToStep
         }}
-      >
-        {this.props.children}
-      </Provider>
+      > {this.props.children}</Provider>
     )
   }
 }

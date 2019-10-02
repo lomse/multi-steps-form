@@ -10,7 +10,7 @@
     "webpack": "npm run format && webpack",
     "webpack:watch": "npm run format && webpack --watch",
     "build": "tsc --pretty",
-    "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
+    "prebuild": "tslint -c tslint.json -p tsconfig.json --fix"
   },
   "keywords": [],
   "author": "",

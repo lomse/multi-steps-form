@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { STEPS } from '../../../interfaces/Common'
-import { Consumer } from '../../Context'
+import { STEPS } from '../../interfaces/Common'
+import { Consumer } from '../../context/AppContext'
 
 const Step1: React.FC = () => (
   <Consumer>

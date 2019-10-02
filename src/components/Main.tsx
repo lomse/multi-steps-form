@@ -1,8 +1,8 @@
 import * as React from 'react'
 import StepSection from './stepSection'
 import InitialForm from './InitialForm'
-import { Consumer } from '../Context'
-import { STEPS } from '../../interfaces/Common'
+import { Consumer } from '../context/AppContext'
+import { STEPS } from '../interfaces/Common'
 
 const Presentation: React.FC = () => (
   <Consumer>

@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { ACCEPT_SHIPMENTS, STEPS } from '../../interfaces/Common'
-import { Consumer } from '../Context'
+import { ACCEPT_SHIPMENTS, STEPS } from '../interfaces/Common'
+import { Consumer } from '../context/AppContext'
 
 const InitialForm: React.FC = () => (
   <Consumer>

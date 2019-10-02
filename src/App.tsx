@@ -1,6 +1,6 @@
 import * as React from 'react'
-import AppProvider from './components/AppProvider'
-import Presentation from './components/presentation/Main'
+import AppProvider from './context/AppProvider'
+import Presentation from './components/Main'
 
 const App: React.FC = () => (
   <AppProvider>

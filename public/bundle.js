@@ -32190,23 +32190,23 @@ if (false) {} else {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_AppProvider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/AppProvider */ "./src/components/AppProvider.tsx");
-/* harmony import */ var _components_presentation_Main__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/presentation/Main */ "./src/components/presentation/Main.tsx");
+/* harmony import */ var _context_AppProvider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./context/AppProvider */ "./src/context/AppProvider.tsx");
+/* harmony import */ var _components_Main__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Main */ "./src/components/Main.tsx");
 
 
 
 
 var App = function App() {
-  return react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_components_AppProvider__WEBPACK_IMPORTED_MODULE_1__["default"], null, react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_components_presentation_Main__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+  return react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_context_AppProvider__WEBPACK_IMPORTED_MODULE_1__["default"], null, react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_components_Main__WEBPACK_IMPORTED_MODULE_2__["default"], null));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
 
 /***/ }),
 
-/***/ "./src/components/AppProvider.tsx":
+/***/ "./src/components/InitialForm.tsx":
 /*!****************************************!*\
-  !*** ./src/components/AppProvider.tsx ***!
+  !*** ./src/components/InitialForm.tsx ***!
   \****************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -32216,7 +32216,235 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _interfaces_Common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../interfaces/Common */ "./src/interfaces/Common.ts");
-/* harmony import */ var _Context__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Context */ "./src/components/Context.tsx");
+/* harmony import */ var _context_AppContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../context/AppContext */ "./src/context/AppContext.tsx");
+
+
+
+
+var InitialForm = function InitialForm() {
+  return react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_context_AppContext__WEBPACK_IMPORTED_MODULE_2__["Consumer"], null, function (context) {
+    return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("fieldset", {
+      className: "align-center"
+    }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("legend", null, "Do you accept shipments?"), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("ul", {
+      className: "errors"
+    }, context.state.errors.map(function (error, i) {
+      return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("li", {
+        key: i
+      }, error.message);
+    })), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("select", {
+      name: "acceptShipment",
+      value: context.state.acceptShipment,
+      onChange: function onChange(event) {
+        return context.handleInputChange(event);
+      }
+    }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("option", {
+      value: _interfaces_Common__WEBPACK_IMPORTED_MODULE_1__["ACCEPT_SHIPMENTS"].EMPTY_VALUE
+    }, "Select"), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("option", {
+      value: _interfaces_Common__WEBPACK_IMPORTED_MODULE_1__["ACCEPT_SHIPMENTS"].YES
+    }, _interfaces_Common__WEBPACK_IMPORTED_MODULE_1__["ACCEPT_SHIPMENTS"].YES), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("option", {
+      value: _interfaces_Common__WEBPACK_IMPORTED_MODULE_1__["ACCEPT_SHIPMENTS"].NO
+    }, _interfaces_Common__WEBPACK_IMPORTED_MODULE_1__["ACCEPT_SHIPMENTS"].NO)), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("p", {
+      id: "step0commands"
+    }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("button", {
+      className: "next btn",
+      onClick: function onClick() {
+        return context.goToStep(_interfaces_Common__WEBPACK_IMPORTED_MODULE_1__["STEPS"].STEP_ONE);
+      }
+    }, "Next >")));
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (InitialForm);
+
+/***/ }),
+
+/***/ "./src/components/Main.tsx":
+/*!*********************************!*\
+  !*** ./src/components/Main.tsx ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _stepSection__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./stepSection */ "./src/components/stepSection/index.tsx");
+/* harmony import */ var _InitialForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./InitialForm */ "./src/components/InitialForm.tsx");
+/* harmony import */ var _context_AppContext__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../context/AppContext */ "./src/context/AppContext.tsx");
+/* harmony import */ var _interfaces_Common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../interfaces/Common */ "./src/interfaces/Common.ts");
+
+
+
+
+
+
+var Presentation = function Presentation() {
+  return react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_context_AppContext__WEBPACK_IMPORTED_MODULE_3__["Consumer"], null, function (context) {
+    return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
+      className: "wrapper"
+    }, context.state.selectedStep === _interfaces_Common__WEBPACK_IMPORTED_MODULE_4__["STEPS"].INITIAL_PAGE ? react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_InitialForm__WEBPACK_IMPORTED_MODULE_2__["default"], null) : react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_stepSection__WEBPACK_IMPORTED_MODULE_1__["default"], null));
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Presentation);
+
+/***/ }),
+
+/***/ "./src/components/stepSection/Step1.tsx":
+/*!**********************************************!*\
+  !*** ./src/components/stepSection/Step1.tsx ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _interfaces_Common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../interfaces/Common */ "./src/interfaces/Common.ts");
+/* harmony import */ var _context_AppContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../context/AppContext */ "./src/context/AppContext.tsx");
+
+
+
+
+var Step1 = function Step1() {
+  return react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_context_AppContext__WEBPACK_IMPORTED_MODULE_2__["Consumer"], null, function (context) {
+    return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("fieldset", null, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("legend", null, " Account information"), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("label", {
+      htmlFor: "Name"
+    }, "Name"), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("input", {
+      id: "Name",
+      type: "text"
+    }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("label", {
+      htmlFor: "Email"
+    }, "Email"), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("input", {
+      id: "Email",
+      type: "text"
+    }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("label", {
+      htmlFor: "Password"
+    }, "Password"), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("input", {
+      id: "Password",
+      type: "password"
+    }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("p", {
+      id: "step0commands"
+    }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("button", {
+      className: "prev btn float-left",
+      onClick: function onClick() {
+        return context.goToStep(_interfaces_Common__WEBPACK_IMPORTED_MODULE_1__["STEPS"].INITIAL_PAGE);
+      }
+    }, "< Previous"), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("button", {
+      className: "next btn float-right",
+      onClick: function onClick() {
+        return context.goToStep(_interfaces_Common__WEBPACK_IMPORTED_MODULE_1__["STEPS"].STEP_TWO);
+      }
+    }, "Next >")));
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Step1);
+
+/***/ }),
+
+/***/ "./src/components/stepSection/Wizard.tsx":
+/*!***********************************************!*\
+  !*** ./src/components/stepSection/Wizard.tsx ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var Wizard = function Wizard() {
+  return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("ul", {
+    id: "steps"
+  }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("li", {
+    className: "current"
+  }, "Step 1", react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", null, " Account information")), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("li", null, "Step 2", react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", null, " Company information")), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("li", null, "Step 3", react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", null, " Billing information")));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Wizard);
+
+/***/ }),
+
+/***/ "./src/components/stepSection/index.tsx":
+/*!**********************************************!*\
+  !*** ./src/components/stepSection/index.tsx ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Wizard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Wizard */ "./src/components/stepSection/Wizard.tsx");
+/* harmony import */ var _Step1__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Step1 */ "./src/components/stepSection/Step1.tsx");
+
+
+
+
+var StepSection = function StepSection() {
+  return react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_Wizard__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_Step1__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (StepSection);
+
+/***/ }),
+
+/***/ "./src/context/AppContext.tsx":
+/*!************************************!*\
+  !*** ./src/context/AppContext.tsx ***!
+  \************************************/
+/*! exports provided: DEFAULT_STATE, DEFAULT_VALUE, Provider, Consumer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DEFAULT_STATE", function() { return DEFAULT_STATE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DEFAULT_VALUE", function() { return DEFAULT_VALUE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Provider", function() { return Provider; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Consumer", function() { return Consumer; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _interfaces_Common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../interfaces/Common */ "./src/interfaces/Common.ts");
+
+
+var DEFAULT_STATE = {
+  errors: [],
+  acceptShipment: _interfaces_Common__WEBPACK_IMPORTED_MODULE_1__["ACCEPT_SHIPMENTS"].EMPTY_VALUE,
+  selectedStep: _interfaces_Common__WEBPACK_IMPORTED_MODULE_1__["STEPS"].INITIAL_PAGE
+};
+var DEFAULT_VALUE = {
+  state: DEFAULT_STATE,
+  handleInputChange: function handleInputChange() {},
+  goToStep: function goToStep() {}
+};
+
+var _React$createContext = react__WEBPACK_IMPORTED_MODULE_0__["createContext"](DEFAULT_VALUE),
+    Provider = _React$createContext.Provider,
+    Consumer = _React$createContext.Consumer;
+
+
+
+/***/ }),
+
+/***/ "./src/context/AppProvider.tsx":
+/*!*************************************!*\
+  !*** ./src/context/AppProvider.tsx ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _interfaces_Common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../interfaces/Common */ "./src/interfaces/Common.ts");
+/* harmony import */ var _AppContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AppContext */ "./src/context/AppContext.tsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -32259,7 +32487,7 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(AppProvider)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
-    _defineProperty(_assertThisInitialized(_this), "state", _Context__WEBPACK_IMPORTED_MODULE_2__["DEFAULT_STATE"]);
+    _defineProperty(_assertThisInitialized(_this), "state", _AppContext__WEBPACK_IMPORTED_MODULE_2__["DEFAULT_STATE"]);
 
     _defineProperty(_assertThisInitialized(_this), "handleInputChange", function (event) {
       var target = event.target;
@@ -32296,13 +32524,13 @@ function (_React$Component) {
   _createClass(AppProvider, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_Context__WEBPACK_IMPORTED_MODULE_2__["Provider"], {
+      return react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_AppContext__WEBPACK_IMPORTED_MODULE_2__["Provider"], {
         value: {
           state: this.state,
           handleInputChange: this.handleInputChange,
           goToStep: this.goToStep
         }
-      }, this.props.children);
+      }, " ", this.props.children);
     }
   }]);
 
@@ -32310,234 +32538,6 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (AppProvider);
-
-/***/ }),
-
-/***/ "./src/components/Context.tsx":
-/*!************************************!*\
-  !*** ./src/components/Context.tsx ***!
-  \************************************/
-/*! exports provided: DEFAULT_STATE, DEFAULT_VALUE, Provider, Consumer */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DEFAULT_STATE", function() { return DEFAULT_STATE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DEFAULT_VALUE", function() { return DEFAULT_VALUE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Provider", function() { return Provider; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Consumer", function() { return Consumer; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _interfaces_Common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../interfaces/Common */ "./src/interfaces/Common.ts");
-
-
-var DEFAULT_STATE = {
-  errors: [],
-  acceptShipment: _interfaces_Common__WEBPACK_IMPORTED_MODULE_1__["ACCEPT_SHIPMENTS"].EMPTY_VALUE,
-  selectedStep: _interfaces_Common__WEBPACK_IMPORTED_MODULE_1__["STEPS"].INITIAL_PAGE
-};
-var DEFAULT_VALUE = {
-  state: DEFAULT_STATE,
-  handleInputChange: function handleInputChange() {},
-  goToStep: function goToStep() {}
-};
-
-var _React$createContext = react__WEBPACK_IMPORTED_MODULE_0__["createContext"](DEFAULT_VALUE),
-    Provider = _React$createContext.Provider,
-    Consumer = _React$createContext.Consumer;
-
-
-
-/***/ }),
-
-/***/ "./src/components/presentation/InitialForm.tsx":
-/*!*****************************************************!*\
-  !*** ./src/components/presentation/InitialForm.tsx ***!
-  \*****************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _interfaces_Common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../interfaces/Common */ "./src/interfaces/Common.ts");
-/* harmony import */ var _Context__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Context */ "./src/components/Context.tsx");
-
-
-
-
-var InitialForm = function InitialForm() {
-  return react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_Context__WEBPACK_IMPORTED_MODULE_2__["Consumer"], null, function (context) {
-    return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("fieldset", {
-      className: "align-center"
-    }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("legend", null, "Do you accept shipments?"), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("ul", {
-      className: "errors"
-    }, context.state.errors.map(function (error, i) {
-      return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("li", {
-        key: i
-      }, error.message);
-    })), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("select", {
-      name: "acceptShipment",
-      value: context.state.acceptShipment,
-      onChange: function onChange(event) {
-        return context.handleInputChange(event);
-      }
-    }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("option", {
-      value: _interfaces_Common__WEBPACK_IMPORTED_MODULE_1__["ACCEPT_SHIPMENTS"].EMPTY_VALUE
-    }, "Select"), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("option", {
-      value: _interfaces_Common__WEBPACK_IMPORTED_MODULE_1__["ACCEPT_SHIPMENTS"].YES
-    }, _interfaces_Common__WEBPACK_IMPORTED_MODULE_1__["ACCEPT_SHIPMENTS"].YES), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("option", {
-      value: _interfaces_Common__WEBPACK_IMPORTED_MODULE_1__["ACCEPT_SHIPMENTS"].NO
-    }, _interfaces_Common__WEBPACK_IMPORTED_MODULE_1__["ACCEPT_SHIPMENTS"].NO)), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("p", {
-      id: "step0commands"
-    }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("button", {
-      className: "next btn",
-      onClick: function onClick() {
-        return context.goToStep(_interfaces_Common__WEBPACK_IMPORTED_MODULE_1__["STEPS"].STEP_ONE);
-      }
-    }, "Next >")));
-  });
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (InitialForm);
-
-/***/ }),
-
-/***/ "./src/components/presentation/Main.tsx":
-/*!**********************************************!*\
-  !*** ./src/components/presentation/Main.tsx ***!
-  \**********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _stepSection__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./stepSection */ "./src/components/presentation/stepSection/index.tsx");
-/* harmony import */ var _InitialForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./InitialForm */ "./src/components/presentation/InitialForm.tsx");
-/* harmony import */ var _Context__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Context */ "./src/components/Context.tsx");
-/* harmony import */ var _interfaces_Common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../interfaces/Common */ "./src/interfaces/Common.ts");
-
-
-
-
-
-
-var Presentation = function Presentation() {
-  return react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_Context__WEBPACK_IMPORTED_MODULE_3__["Consumer"], null, function (context) {
-    return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
-      className: "wrapper"
-    }, context.state.selectedStep === _interfaces_Common__WEBPACK_IMPORTED_MODULE_4__["STEPS"].INITIAL_PAGE ? react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_InitialForm__WEBPACK_IMPORTED_MODULE_2__["default"], null) : react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_stepSection__WEBPACK_IMPORTED_MODULE_1__["default"], null));
-  });
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Presentation);
-
-/***/ }),
-
-/***/ "./src/components/presentation/stepSection/Step1.tsx":
-/*!***********************************************************!*\
-  !*** ./src/components/presentation/stepSection/Step1.tsx ***!
-  \***********************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _interfaces_Common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../interfaces/Common */ "./src/interfaces/Common.ts");
-/* harmony import */ var _Context__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Context */ "./src/components/Context.tsx");
-
-
-
-
-var Step1 = function Step1() {
-  return react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_Context__WEBPACK_IMPORTED_MODULE_2__["Consumer"], null, function (context) {
-    return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("fieldset", null, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("legend", null, " Account information"), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("label", {
-      htmlFor: "Name"
-    }, "Name"), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("input", {
-      id: "Name",
-      type: "text"
-    }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("label", {
-      htmlFor: "Email"
-    }, "Email"), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("input", {
-      id: "Email",
-      type: "text"
-    }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("label", {
-      htmlFor: "Password"
-    }, "Password"), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("input", {
-      id: "Password",
-      type: "password"
-    }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("p", {
-      id: "step0commands"
-    }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("button", {
-      className: "prev btn float-left",
-      onClick: function onClick() {
-        return context.goToStep(_interfaces_Common__WEBPACK_IMPORTED_MODULE_1__["STEPS"].INITIAL_PAGE);
-      }
-    }, "< Previous"), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("button", {
-      className: "next btn float-right",
-      onClick: function onClick() {
-        return context.goToStep(_interfaces_Common__WEBPACK_IMPORTED_MODULE_1__["STEPS"].STEP_TWO);
-      }
-    }, "Next >")));
-  });
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Step1);
-
-/***/ }),
-
-/***/ "./src/components/presentation/stepSection/Wizard.tsx":
-/*!************************************************************!*\
-  !*** ./src/components/presentation/stepSection/Wizard.tsx ***!
-  \************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-
-var Wizard = function Wizard() {
-  return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("ul", {
-    id: "steps"
-  }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("li", {
-    className: "current"
-  }, "Step 1", react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", null, " Account information")), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("li", null, "Step 2", react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", null, " Company information")), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("li", null, "Step 3", react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", null, " Billing information")));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Wizard);
-
-/***/ }),
-
-/***/ "./src/components/presentation/stepSection/index.tsx":
-/*!***********************************************************!*\
-  !*** ./src/components/presentation/stepSection/index.tsx ***!
-  \***********************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Wizard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Wizard */ "./src/components/presentation/stepSection/Wizard.tsx");
-/* harmony import */ var _Step1__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Step1 */ "./src/components/presentation/stepSection/Step1.tsx");
-
-
-
-
-var StepSection = function StepSection() {
-  return react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_Wizard__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_Step1__WEBPACK_IMPORTED_MODULE_2__["default"], null));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (StepSection);
 
 /***/ }),
 
