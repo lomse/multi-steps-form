@@ -1,0 +1,49 @@
+body { font-family:Lucida Sans, Arial, Helvetica, Sans-Serif; font-size:13px; margin:20px;}
+.wrapper {
+    width: 355px;
+    margin: 50px auto;
+}
+#main { width:960px; margin: 0px auto; border:solid 1px #b2b3b5; border-radius:10px; padding:20px; background-color:#f6f6f6;}
+#header { text-align:center; border-bottom:solid 1px #b2b3b5; margin: 0 0 20px 0; }
+fieldset { border:none; width:320px;}
+legend { font-size:18px; margin:0px; padding:10px 0px; color:#b0232a; font-weight:bold;}
+label { display:block; margin:15px 0 5px;}
+input[type=text], input[type=password] { width:300px; padding:5px; border:solid 1px #000;}
+.prev, .next { background-color:#b0232a; padding:5px 10px; color:#fff; text-decoration:none;}
+.prev:hover, .next:hover { background-color:#000; text-decoration:none;}
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+#steps { list-style:none; width:100%; overflow:hidden; margin:0px; padding:0px;}
+#steps li {font-size:24px; float:left; padding:10px; color:#b0b1b3;}
+#steps li span {font-size:11px; display:block;}
+#steps li.current { color:#000;}
+#makeWizard { background-color:#b0232a; color:#fff; padding:5px 10px; text-decoration:none; font-size:18px;}
+#makeWizard:hover { background-color:#000;}
+label {
+    margin-right: 10px;
+}
+.display-inline-block {
+    display: inline-block
+}
+.align-center {
+    text-align: center;
+}
+.btn {
+    padding: 5px 20px;
+    border: 0;
+    cursor: pointer
+}
+ul.errors {
+    margin: 0 0 20px 0;
+    padding: 0;
+}
+
+ul.errors li {
+    list-style: none;
+    color: crimson;
+}
