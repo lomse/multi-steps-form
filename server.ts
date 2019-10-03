@@ -5,7 +5,7 @@ import * as express from 'express'
 const app: express.Application = express()
 const port = 5000
 
-app.use(express.static(path.join(__dirname, '../public')))
+app.use(express.static(path.join(__dirname, './public')))
 
 app.listen(port, () => {
   // tslint:disable-next-line: no-console

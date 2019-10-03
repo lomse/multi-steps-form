@@ -1,6 +1,7 @@
 import * as React from 'react'
-import { ACCEPT_SHIPMENTS, STEPS, IContainerState } from '../interfaces/Common'
+import { STEPS, IContainerState, IValidationError } from '../interfaces/types'
 import { Provider, DEFAULT_STATE } from './AppContext'
+import { validateInitalStep, validateStepOne, validateStepTwo } from '../utils/validations'
 
 class AppProvider extends React.Component {
   state: Readonly<IContainerState> = DEFAULT_STATE
@@ -15,12 +16,31 @@ class AppProvider extends React.Component {
     })
   }
 
-  goToStep = (selectedStep: STEPS) => {
-    const { acceptShipment } = this.state
+  goToStep = (selectedStep: STEPS, currentStep: STEPS) => {
+    let errors: IValidationError[] = []
+
+    const { acceptShipment, name, email, password, confirmPassword, dob, phone, gender } = this.state
 
     this.setState({ errors: [] }, () => {
-      if (acceptShipment === ACCEPT_SHIPMENTS.EMPTY_VALUE) {
-        this.setState({ errors: [{ label: 'acceptShipment', message: 'Select an option to proceed.' }] })
+      switch (currentStep) {
+        case STEPS.INITIAL_PAGE:
+          errors = validateInitalStep(acceptShipment)
+          break
+
+        case STEPS.STEP_ONE:
+          errors = validateStepOne({ name, email, password, confirmPassword })
+          break
+
+        case STEPS.STEP_TWO:
+          errors = validateStepTwo({ dob, phone, gender })
+          break
+
+        default:
+          break
+      }
+
+      if (errors.length) {
+        this.setState({ errors })
       } else {
         this.setState({ selectedStep })
       }
@@ -35,7 +55,9 @@ class AppProvider extends React.Component {
           handleInputChange: this.handleInputChange,
           goToStep: this.goToStep
         }}
-      > {this.props.children}</Provider>
+      >
+        {this.props.children}
+      </Provider>
     )
   }
 }

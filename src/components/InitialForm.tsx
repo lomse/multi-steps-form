@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { ACCEPT_SHIPMENTS, STEPS } from '../interfaces/Common'
+import { ACCEPT_SHIPMENTS, STEPS } from '../interfaces/types'
 import { Consumer } from '../context/AppContext'
 
 const InitialForm: React.FC = () => (
@@ -22,7 +22,7 @@ const InitialForm: React.FC = () => (
           <option value={ACCEPT_SHIPMENTS.NO}>{ACCEPT_SHIPMENTS.NO}</option>
         </select>
         <p id="step0commands">
-          <button className="next btn" onClick={() => context.goToStep(STEPS.STEP_ONE)}>
+          <button className="next btn" onClick={() => context.goToStep(STEPS.STEP_ONE, STEPS.INITIAL_PAGE)}>
             Next &gt;
           </button>
         </p>

@@ -14,11 +14,11 @@ const config = {
     module: {
         rules: [
             { test: /\.tsx?$/, loader: 'babel-loader' },
-            { test: /\.(png|woff|woff2|eot|ttf|svg)$/,  use:'file-loader' },
+            { test: /\.(png|woff|woff2|eot|ttf|svg)$/, use: 'file-loader' },
             { test: /\.css$/, use: ['style-loader', 'css-loader'] }
         ]
     },
-    mode: "development"
+    mode: 'development'
 }
 
 module.exports = config
