@@ -61,5 +61,3 @@ export interface IMaskedInputField {
   placeholder: string
   onChange: HandleInputChangeFunc
 }
-
-export type MaskedInputFieldDefaultProps = Pick<IMaskedInputField, 'name' | 'placeholder'>

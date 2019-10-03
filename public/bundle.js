@@ -51859,7 +51859,6 @@ var MaskedInput = function MaskedInput(props) {
   return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
     className: "form-group"
   }, props.labelText && react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("label", null, props.labelText), react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_input_mask__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    error: "OOps",
     type: "text",
     mask: props.mask,
     className: "form-control",

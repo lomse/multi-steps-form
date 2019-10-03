@@ -6,7 +6,6 @@ const MaskedInput: React.FC<IMaskedInputField> = props => (
     <div className="form-group">
         {props.labelText && <label>{props.labelText}</label>}
         <InputMask
-            error="OOps"
             type="text"
             mask={props.mask}
             className="form-control"
