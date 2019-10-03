@@ -51142,6 +51142,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _interfaces_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../interfaces/types */ "./src/interfaces/types.ts");
 /* harmony import */ var _context_AppContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../context/AppContext */ "./src/context/AppContext.tsx");
+/* harmony import */ var _utils_validations__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/validations */ "./src/utils/validations.ts");
+
 
 
 
@@ -51150,13 +51152,9 @@ var InitialForm = function InitialForm() {
   return react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_context_AppContext__WEBPACK_IMPORTED_MODULE_2__["Consumer"], null, function (context) {
     return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("fieldset", {
       className: "align-center"
-    }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("legend", null, "Do you accept shipments?"), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("ul", {
-      className: "errors"
-    }, context.state.errors.map(function (error, i) {
-      return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("li", {
-        key: i
-      }, error.message);
-    })), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("select", {
+    }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("legend", null, "Do you accept shipments?"), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", {
+      className: "error-message"
+    }, Object(_utils_validations__WEBPACK_IMPORTED_MODULE_3__["getErrorMessage"])(context.state.errors, 'AcceptShipment')), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("br", null), " ", react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("br", null), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("select", {
       name: "acceptShipment",
       value: context.state.acceptShipment,
       onChange: function onChange(event) {
@@ -51960,7 +51958,7 @@ var validateInitalStep = function validateInitalStep(acceptShipment) {
 
   if (acceptShipment === _interfaces_types__WEBPACK_IMPORTED_MODULE_1__["ACCEPT_SHIPMENTS"].EMPTY_VALUE) {
     errors = [{
-      label: 'acceptShipment',
+      label: 'AcceptShipment',
       message: 'Select an option to proceed.'
     }];
   }

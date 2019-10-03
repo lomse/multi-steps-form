@@ -5,7 +5,7 @@ export const validateInitalStep = (acceptShipment: string) => {
   let errors: IValidationError[] = []
 
   if (acceptShipment === ACCEPT_SHIPMENTS.EMPTY_VALUE) {
-    errors = [{ label: 'acceptShipment', message: 'Select an option to proceed.' }]
+    errors = [{ label: 'AcceptShipment', message: 'Select an option to proceed.' }]
   }
 
   return errors

@@ -1,17 +1,15 @@
 import * as React from 'react'
 import { ACCEPT_SHIPMENTS, STEPS } from '../interfaces/types'
 import { Consumer } from '../context/AppContext'
+import { getErrorMessage } from '../utils/validations'
 
 const InitialForm: React.FC = () => (
   <Consumer>
     {context => (
       <fieldset className="align-center">
         <legend>Do you accept shipments?</legend>
-        <ul className="errors">
-          {context.state.errors.map((error, i) => (
-            <li key={i}>{error.message}</li>
-          ))}
-        </ul>
+        <span className="error-message">{getErrorMessage(context.state.errors, 'AcceptShipment')}</span>
+        <br /> <br />
         <select
           name="acceptShipment"
           value={context.state.acceptShipment}
