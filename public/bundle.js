@@ -51861,7 +51861,6 @@ var MaskedInput = function MaskedInput(props) {
   }, props.labelText && react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("label", null, props.labelText), react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_input_mask__WEBPACK_IMPORTED_MODULE_1___default.a, {
     type: "text",
     mask: props.mask,
-    className: "form-control",
     value: props.value,
     name: props.name,
     placeholder: props.placeholder,

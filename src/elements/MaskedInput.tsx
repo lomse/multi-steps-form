@@ -8,7 +8,6 @@ const MaskedInput: React.FC<IMaskedInputField> = props => (
         <InputMask
             type="text"
             mask={props.mask}
-            className="form-control"
             value={props.value}
             name={props.name}
             placeholder={props.placeholder}
