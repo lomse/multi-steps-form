@@ -43,7 +43,7 @@ export interface IStepTwoFormData {
 }
 
 export interface IContainerState extends IStepOneFormData, IStepTwoFormData {
-  errors: Array<{ label: string; message: string }>
+  errors: IValidationError[]
   acceptShipment: ACCEPT_SHIPMENTS
   selectedStep: STEPS
 }
