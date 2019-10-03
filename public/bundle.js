@@ -51214,95 +51214,6 @@ var Presentation = function Presentation() {
 
 /***/ }),
 
-/***/ "./src/components/stepSection/SteP3.tsx":
-/*!**********************************************!*\
-  !*** ./src/components/stepSection/SteP3.tsx ***!
-  \**********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _interfaces_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../interfaces/types */ "./src/interfaces/types.ts");
-/* harmony import */ var _context_AppContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../context/AppContext */ "./src/context/AppContext.tsx");
-/* harmony import */ var _utils_validations__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utils/validations */ "./src/utils/validations.ts");
-
-
-
-
-
-var Step3 = function Step3() {
-  return react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_context_AppContext__WEBPACK_IMPORTED_MODULE_2__["Consumer"], null, function (context) {
-    var state = context.state,
-        handleInputChange = context.handleInputChange;
-    var errors = state.errors,
-        dob = state.dob,
-        phone = state.phone,
-        gender = state.gender,
-        acceptShipment = state.acceptShipment;
-    var nextStep = acceptShipment === _interfaces_types__WEBPACK_IMPORTED_MODULE_1__["ACCEPT_SHIPMENTS"].YES ? _interfaces_types__WEBPACK_IMPORTED_MODULE_1__["STEPS"].STEP_THREE : _interfaces_types__WEBPACK_IMPORTED_MODULE_1__["STEPS"].STEP_FOUR;
-    return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("fieldset", null, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("legend", null, " Date of Birth"), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("label", {
-      htmlFor: "name"
-    }, "Name"), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("input", {
-      id: "dob",
-      type: "text",
-      name: "dob",
-      value: dob,
-      onChange: function onChange(event) {
-        return handleInputChange(event);
-      }
-    }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", {
-      className: "error-message"
-    }, Object(_utils_validations__WEBPACK_IMPORTED_MODULE_3__["getErrorMessage"])(errors, 'DOB')), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("label", {
-      htmlFor: "phone"
-    }, "Phone Number"), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("input", {
-      id: "phone",
-      type: "text",
-      name: "phone",
-      value: phone,
-      onChange: function onChange(event) {
-        return handleInputChange(event);
-      }
-    }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", {
-      className: "error-message"
-    }, Object(_utils_validations__WEBPACK_IMPORTED_MODULE_3__["getErrorMessage"])(errors, 'Phone')), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("label", {
-      htmlFor: "gender"
-    }, "Gender"), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("select", {
-      name: "gender",
-      id: "gender",
-      value: gender
-    }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("option", {
-      value: _interfaces_types__WEBPACK_IMPORTED_MODULE_1__["GENDER"].EMPTY_VALUE
-    }, "Select"), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("option", {
-      value: _interfaces_types__WEBPACK_IMPORTED_MODULE_1__["GENDER"].MALE
-    }, "Male"), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("option", {
-      value: _interfaces_types__WEBPACK_IMPORTED_MODULE_1__["GENDER"].FEMALE
-    }, "Female"), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("option", {
-      value: _interfaces_types__WEBPACK_IMPORTED_MODULE_1__["GENDER"].OTHER
-    }, "Other")), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", {
-      className: "error-message"
-    }, Object(_utils_validations__WEBPACK_IMPORTED_MODULE_3__["getErrorMessage"])(errors, 'Gender')), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("p", {
-      id: "step0commands"
-    }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("button", {
-      className: "prev btn float-left",
-      onClick: function onClick() {
-        return context.goToStep(_interfaces_types__WEBPACK_IMPORTED_MODULE_1__["STEPS"].STEP_ONE);
-      }
-    }, "< Previous"), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("button", {
-      className: "next btn float-right",
-      onClick: function onClick() {
-        return context.goToStep(nextStep);
-      }
-    }, "Next >")));
-  });
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Step3);
-
-/***/ }),
-
 /***/ "./src/components/stepSection/Step1.tsx":
 /*!**********************************************!*\
   !*** ./src/components/stepSection/Step1.tsx ***!
@@ -51465,7 +51376,7 @@ var Step2 = function Step2() {
       value: _interfaces_types__WEBPACK_IMPORTED_MODULE_1__["GENDER"].FEMALE
     }, "Female"), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("option", {
       value: _interfaces_types__WEBPACK_IMPORTED_MODULE_1__["GENDER"].OTHER
-    }, "Other")), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", {
+    }, "Other")), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("br", null), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", {
       className: "error-message"
     }, Object(_utils_validations__WEBPACK_IMPORTED_MODULE_3__["getErrorMessage"])(errors, 'Gender')), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("p", {
       id: "step0commands"
@@ -51484,6 +51395,115 @@ var Step2 = function Step2() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Step2);
+
+/***/ }),
+
+/***/ "./src/components/stepSection/Step3.tsx":
+/*!**********************************************!*\
+  !*** ./src/components/stepSection/Step3.tsx ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _interfaces_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../interfaces/types */ "./src/interfaces/types.ts");
+/* harmony import */ var _context_AppContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../context/AppContext */ "./src/context/AppContext.tsx");
+/* harmony import */ var _utils_validations__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utils/validations */ "./src/utils/validations.ts");
+
+
+
+
+
+var Step4 = function Step4() {
+  return react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_context_AppContext__WEBPACK_IMPORTED_MODULE_2__["Consumer"], null, function (context) {
+    var state = context.state,
+        handleInputChange = context.handleInputChange;
+    var errors = state.errors,
+        address1 = state.address1,
+        address2 = state.address2,
+        zipCode = state.zipCode,
+        city = state.city,
+        userState = state.userState;
+    return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("fieldset", null, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("legend", null, "Address"), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("label", {
+      htmlFor: "name"
+    }, "Address Line 1"), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("input", {
+      id: "address1",
+      type: "text",
+      name: "address1",
+      value: address1,
+      onChange: function onChange(event) {
+        return handleInputChange(event);
+      }
+    }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", {
+      className: "error-message"
+    }, Object(_utils_validations__WEBPACK_IMPORTED_MODULE_3__["getErrorMessage"])(errors, 'Address1')), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("label", {
+      htmlFor: "name"
+    }, "Address Line 2"), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("input", {
+      id: "address2",
+      type: "text",
+      name: "address2",
+      value: address2,
+      onChange: function onChange(event) {
+        return handleInputChange(event);
+      }
+    }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", {
+      className: "error-message"
+    }, Object(_utils_validations__WEBPACK_IMPORTED_MODULE_3__["getErrorMessage"])(errors, 'Address2')), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("label", {
+      htmlFor: "name"
+    }, "Zip Code"), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("input", {
+      id: "zipCode",
+      type: "text",
+      name: "zipCode",
+      value: zipCode,
+      onChange: function onChange(event) {
+        return handleInputChange(event);
+      }
+    }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", {
+      className: "error-message"
+    }, Object(_utils_validations__WEBPACK_IMPORTED_MODULE_3__["getErrorMessage"])(errors, 'ZipCode')), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("label", {
+      htmlFor: "name"
+    }, "City"), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("input", {
+      id: "city",
+      type: "text",
+      name: "city",
+      value: city,
+      onChange: function onChange(event) {
+        return handleInputChange(event);
+      }
+    }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", {
+      className: "error-message"
+    }, Object(_utils_validations__WEBPACK_IMPORTED_MODULE_3__["getErrorMessage"])(errors, 'City')), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("label", {
+      htmlFor: "name"
+    }, "State"), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("input", {
+      id: "userState",
+      type: "text",
+      name: "userState",
+      value: userState,
+      onChange: function onChange(event) {
+        return handleInputChange(event);
+      }
+    }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", {
+      className: "error-message"
+    }, Object(_utils_validations__WEBPACK_IMPORTED_MODULE_3__["getErrorMessage"])(errors, 'State')), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("p", {
+      id: "step0commands"
+    }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("button", {
+      className: "prev btn float-left",
+      onClick: function onClick() {
+        return context.goToStep(_interfaces_types__WEBPACK_IMPORTED_MODULE_1__["STEPS"].STEP_TWO, _interfaces_types__WEBPACK_IMPORTED_MODULE_1__["STEPS"].STEP_THREE);
+      }
+    }, "< Previous"), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("button", {
+      className: "next btn float-right",
+      onClick: function onClick() {
+        return context.goToStep(_interfaces_types__WEBPACK_IMPORTED_MODULE_1__["STEPS"].STEP_FOUR, _interfaces_types__WEBPACK_IMPORTED_MODULE_1__["STEPS"].STEP_THREE);
+      }
+    }, "Next >")));
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Step4);
 
 /***/ }),
 
@@ -51511,64 +51531,39 @@ var Step4 = function Step4() {
     var state = context.state,
         handleInputChange = context.handleInputChange;
     var errors = state.errors,
-        dob = state.dob,
-        phone = state.phone,
-        gender = state.gender,
+        plan = state.plan,
         acceptShipment = state.acceptShipment;
-    var nextStep = acceptShipment === _interfaces_types__WEBPACK_IMPORTED_MODULE_1__["ACCEPT_SHIPMENTS"].YES ? _interfaces_types__WEBPACK_IMPORTED_MODULE_1__["STEPS"].STEP_THREE : _interfaces_types__WEBPACK_IMPORTED_MODULE_1__["STEPS"].STEP_FOUR;
-    return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("fieldset", null, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("legend", null, " Date of Birth"), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("label", {
-      htmlFor: "name"
-    }, "Name"), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("input", {
-      id: "dob",
-      type: "text",
-      name: "dob",
-      value: dob,
+    var previousStep = acceptShipment === _interfaces_types__WEBPACK_IMPORTED_MODULE_1__["ACCEPT_SHIPMENTS"].YES ? _interfaces_types__WEBPACK_IMPORTED_MODULE_1__["STEPS"].STEP_THREE : _interfaces_types__WEBPACK_IMPORTED_MODULE_1__["STEPS"].STEP_TWO;
+    return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("fieldset", null, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("legend", null, "Subscription"), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("label", {
+      htmlFor: "plan"
+    }, "Plan"), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("select", {
+      name: "plan",
+      id: "plan",
+      value: plan,
       onChange: function onChange(event) {
         return handleInputChange(event);
       }
-    }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", {
-      className: "error-message"
-    }, Object(_utils_validations__WEBPACK_IMPORTED_MODULE_3__["getErrorMessage"])(errors, 'DOB')), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("label", {
-      htmlFor: "phone"
-    }, "Phone Number"), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("input", {
-      id: "phone",
-      type: "text",
-      name: "phone",
-      value: phone,
-      onChange: function onChange(event) {
-        return handleInputChange(event);
-      }
-    }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", {
-      className: "error-message"
-    }, Object(_utils_validations__WEBPACK_IMPORTED_MODULE_3__["getErrorMessage"])(errors, 'Phone')), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("label", {
-      htmlFor: "gender"
-    }, "Gender"), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("select", {
-      name: "gender",
-      id: "gender",
-      value: gender
     }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("option", {
-      value: _interfaces_types__WEBPACK_IMPORTED_MODULE_1__["GENDER"].EMPTY_VALUE
+      value: _interfaces_types__WEBPACK_IMPORTED_MODULE_1__["PLAN_OPTIONS"].EMPTY_VALUE
     }, "Select"), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("option", {
-      value: _interfaces_types__WEBPACK_IMPORTED_MODULE_1__["GENDER"].MALE
-    }, "Male"), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("option", {
-      value: _interfaces_types__WEBPACK_IMPORTED_MODULE_1__["GENDER"].FEMALE
-    }, "Female"), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("option", {
-      value: _interfaces_types__WEBPACK_IMPORTED_MODULE_1__["GENDER"].OTHER
-    }, "Other")), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", {
+      value: _interfaces_types__WEBPACK_IMPORTED_MODULE_1__["PLAN_OPTIONS"].MONTHLY
+    }, _interfaces_types__WEBPACK_IMPORTED_MODULE_1__["PLAN_OPTIONS"].MONTHLY), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("option", {
+      value: _interfaces_types__WEBPACK_IMPORTED_MODULE_1__["PLAN_OPTIONS"].YEARLY
+    }, _interfaces_types__WEBPACK_IMPORTED_MODULE_1__["PLAN_OPTIONS"].YEARLY)), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("br", null), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", {
       className: "error-message"
-    }, Object(_utils_validations__WEBPACK_IMPORTED_MODULE_3__["getErrorMessage"])(errors, 'Gender')), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("p", {
+    }, Object(_utils_validations__WEBPACK_IMPORTED_MODULE_3__["getErrorMessage"])(errors, 'Plan')), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("p", {
       id: "step0commands"
     }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("button", {
       className: "prev btn float-left",
       onClick: function onClick() {
-        return context.goToStep(_interfaces_types__WEBPACK_IMPORTED_MODULE_1__["STEPS"].STEP_ONE);
+        return context.goToStep(previousStep, _interfaces_types__WEBPACK_IMPORTED_MODULE_1__["STEPS"].STEP_THREE);
       }
     }, "< Previous"), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("button", {
       className: "next btn float-right",
       onClick: function onClick() {
-        return context.goToStep(nextStep);
+        return context.goToStep(_interfaces_types__WEBPACK_IMPORTED_MODULE_1__["STEPS"].STEP_FOUR, _interfaces_types__WEBPACK_IMPORTED_MODULE_1__["STEPS"].STEP_FOUR);
       }
-    }, "Next >")));
+    }, "Submit")));
   });
 };
 
@@ -51629,7 +51624,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _context_AppContext__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../context/AppContext */ "./src/context/AppContext.tsx");
 /* harmony import */ var _interfaces_types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../interfaces/types */ "./src/interfaces/types.ts");
 /* harmony import */ var _Step2__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Step2 */ "./src/components/stepSection/Step2.tsx");
-/* harmony import */ var _SteP3__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./SteP3 */ "./src/components/stepSection/SteP3.tsx");
+/* harmony import */ var _Step3__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Step3 */ "./src/components/stepSection/Step3.tsx");
 /* harmony import */ var _Step4__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Step4 */ "./src/components/stepSection/Step4.tsx");
 
 
@@ -51642,7 +51637,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var StepSection = function StepSection() {
   return react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_context_AppContext__WEBPACK_IMPORTED_MODULE_3__["Consumer"], null, function (context) {
-    return react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_Wizard__WEBPACK_IMPORTED_MODULE_1__["default"], null), context.state.selectedStep === _interfaces_types__WEBPACK_IMPORTED_MODULE_4__["STEPS"].STEP_ONE && react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_Step1__WEBPACK_IMPORTED_MODULE_2__["default"], null), context.state.selectedStep === _interfaces_types__WEBPACK_IMPORTED_MODULE_4__["STEPS"].STEP_TWO && react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_Step2__WEBPACK_IMPORTED_MODULE_5__["default"], null), context.state.selectedStep === _interfaces_types__WEBPACK_IMPORTED_MODULE_4__["STEPS"].STEP_THREE && react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_SteP3__WEBPACK_IMPORTED_MODULE_6__["default"], null), context.state.selectedStep === _interfaces_types__WEBPACK_IMPORTED_MODULE_4__["STEPS"].STEP_FOUR && react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_Step4__WEBPACK_IMPORTED_MODULE_7__["default"], null));
+    return react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_Wizard__WEBPACK_IMPORTED_MODULE_1__["default"], null), context.state.selectedStep === _interfaces_types__WEBPACK_IMPORTED_MODULE_4__["STEPS"].STEP_ONE && react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_Step1__WEBPACK_IMPORTED_MODULE_2__["default"], null), context.state.selectedStep === _interfaces_types__WEBPACK_IMPORTED_MODULE_4__["STEPS"].STEP_TWO && react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_Step2__WEBPACK_IMPORTED_MODULE_5__["default"], null), context.state.selectedStep === _interfaces_types__WEBPACK_IMPORTED_MODULE_4__["STEPS"].STEP_THREE && react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_Step3__WEBPACK_IMPORTED_MODULE_6__["default"], null), context.state.selectedStep === _interfaces_types__WEBPACK_IMPORTED_MODULE_4__["STEPS"].STEP_FOUR && react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_Step4__WEBPACK_IMPORTED_MODULE_7__["default"], null));
   });
 };
 
@@ -51678,7 +51673,13 @@ var DEFAULT_STATE = {
   confirmPassword: '',
   dob: '',
   phone: '',
-  gender: _interfaces_types__WEBPACK_IMPORTED_MODULE_1__["GENDER"].EMPTY_VALUE
+  gender: _interfaces_types__WEBPACK_IMPORTED_MODULE_1__["GENDER"].EMPTY_VALUE,
+  plan: _interfaces_types__WEBPACK_IMPORTED_MODULE_1__["PLAN_OPTIONS"].EMPTY_VALUE,
+  address1: '',
+  address2: '',
+  zipCode: '',
+  city: '',
+  userState: ''
 };
 var DEFAULT_VALUE = {
   state: DEFAULT_STATE,
@@ -51771,18 +51772,23 @@ function (_React$Component) {
           confirmPassword = _this$state.confirmPassword,
           dob = _this$state.dob,
           phone = _this$state.phone,
-          gender = _this$state.gender;
+          gender = _this$state.gender,
+          plan = _this$state.plan,
+          address1 = _this$state.address1,
+          zipCode = _this$state.zipCode,
+          userState = _this$state.userState,
+          city = _this$state.city;
 
       _this.setState({
         errors: []
       }, function () {
         switch (currentStep) {
           case _interfaces_types__WEBPACK_IMPORTED_MODULE_1__["STEPS"].INITIAL_PAGE:
-            errors = Object(_utils_validations__WEBPACK_IMPORTED_MODULE_3__["validateInitalStep"])(acceptShipment);
+            errors = _utils_validations__WEBPACK_IMPORTED_MODULE_3__["initalStep"](acceptShipment);
             break;
 
           case _interfaces_types__WEBPACK_IMPORTED_MODULE_1__["STEPS"].STEP_ONE:
-            errors = Object(_utils_validations__WEBPACK_IMPORTED_MODULE_3__["validateStepOne"])({
+            errors = _utils_validations__WEBPACK_IMPORTED_MODULE_3__["stepOne"]({
               name: name,
               email: email,
               password: password,
@@ -51791,11 +51797,24 @@ function (_React$Component) {
             break;
 
           case _interfaces_types__WEBPACK_IMPORTED_MODULE_1__["STEPS"].STEP_TWO:
-            errors = Object(_utils_validations__WEBPACK_IMPORTED_MODULE_3__["validateStepTwo"])({
+            errors = _utils_validations__WEBPACK_IMPORTED_MODULE_3__["stepTwo"]({
               dob: dob,
               phone: phone,
               gender: gender
             });
+            break;
+
+          case _interfaces_types__WEBPACK_IMPORTED_MODULE_1__["STEPS"].STEP_THREE:
+            errors = _utils_validations__WEBPACK_IMPORTED_MODULE_3__["stepThree"]({
+              address1: address1,
+              city: city,
+              zipCode: zipCode,
+              userState: userState
+            });
+            break;
+
+          case _interfaces_types__WEBPACK_IMPORTED_MODULE_1__["STEPS"].STEP_FOUR:
+            errors = _utils_validations__WEBPACK_IMPORTED_MODULE_3__["stepFour"](plan);
             break;
 
           default:
@@ -51897,7 +51916,7 @@ Object(react_dom__WEBPACK_IMPORTED_MODULE_1__["render"])(react__WEBPACK_IMPORTED
 /*!*********************************!*\
   !*** ./src/interfaces/types.ts ***!
   \*********************************/
-/*! exports provided: STEPS, ACCEPT_SHIPMENTS, GENDER */
+/*! exports provided: STEPS, ACCEPT_SHIPMENTS, GENDER, PLAN_OPTIONS */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -51905,6 +51924,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "STEPS", function() { return STEPS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ACCEPT_SHIPMENTS", function() { return ACCEPT_SHIPMENTS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GENDER", function() { return GENDER; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PLAN_OPTIONS", function() { return PLAN_OPTIONS; });
 var STEPS;
 
 (function (STEPS) {
@@ -51932,28 +51952,38 @@ var GENDER;
   GENDER["EMPTY_VALUE"] = "";
 })(GENDER || (GENDER = {}));
 
+var PLAN_OPTIONS;
+
+(function (PLAN_OPTIONS) {
+  PLAN_OPTIONS["EMPTY_VALUE"] = "";
+  PLAN_OPTIONS["MONTHLY"] = "Monthly";
+  PLAN_OPTIONS["YEARLY"] = "Yearly";
+})(PLAN_OPTIONS || (PLAN_OPTIONS = {}));
+
 /***/ }),
 
 /***/ "./src/utils/validations.ts":
 /*!**********************************!*\
   !*** ./src/utils/validations.ts ***!
   \**********************************/
-/*! exports provided: validateInitalStep, validateStepOne, validateStepTwo, validateEmail, getErrorMessage */
+/*! exports provided: initalStep, stepOne, stepTwo, stepThree, validateEmail, getErrorMessage, stepFour */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "validateInitalStep", function() { return validateInitalStep; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "validateStepOne", function() { return validateStepOne; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "validateStepTwo", function() { return validateStepTwo; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initalStep", function() { return initalStep; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "stepOne", function() { return stepOne; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "stepTwo", function() { return stepTwo; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "stepThree", function() { return stepThree; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "validateEmail", function() { return validateEmail; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getErrorMessage", function() { return getErrorMessage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "stepFour", function() { return stepFour; });
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _interfaces_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../interfaces/types */ "./src/interfaces/types.ts");
 
 
-var validateInitalStep = function validateInitalStep(acceptShipment) {
+var initalStep = function initalStep(acceptShipment) {
   var errors = [];
 
   if (acceptShipment === _interfaces_types__WEBPACK_IMPORTED_MODULE_1__["ACCEPT_SHIPMENTS"].EMPTY_VALUE) {
@@ -51965,7 +51995,7 @@ var validateInitalStep = function validateInitalStep(acceptShipment) {
 
   return errors;
 };
-var validateStepOne = function validateStepOne(_ref) {
+var stepOne = function stepOne(_ref) {
   var name = _ref.name,
       email = _ref.email,
       password = _ref.password,
@@ -52009,7 +52039,7 @@ var validateStepOne = function validateStepOne(_ref) {
 
   return errors;
 };
-var validateStepTwo = function validateStepTwo(_ref2) {
+var stepTwo = function stepTwo(_ref2) {
   var dob = _ref2.dob,
       phone = _ref2.phone,
       gender = _ref2.gender;
@@ -52038,6 +52068,43 @@ var validateStepTwo = function validateStepTwo(_ref2) {
 
   return errors;
 };
+var stepThree = function stepThree(_ref3) {
+  var address1 = _ref3.address1,
+      city = _ref3.city,
+      zipCode = _ref3.zipCode,
+      userState = _ref3.userState;
+  var errors = [];
+
+  if (!address1) {
+    errors.push({
+      label: 'Address1',
+      message: 'Enter your address'
+    });
+  }
+
+  if (!city) {
+    errors.push({
+      label: 'City',
+      message: 'Enter your city'
+    });
+  }
+
+  if (!zipCode) {
+    errors.push({
+      label: 'ZipCode',
+      message: 'Enter your zip code'
+    });
+  }
+
+  if (!userState) {
+    errors.push({
+      label: 'State',
+      message: 'Enter your state'
+    });
+  }
+
+  return errors;
+};
 var validateEmail = function validateEmail(email) {
   var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(String(email).toLowerCase());
@@ -52052,6 +52119,18 @@ var getErrorMessage = function getErrorMessage(errors, label) {
   }
 
   return null;
+};
+var stepFour = function stepFour(plan) {
+  var errors = [];
+
+  if (plan === _interfaces_types__WEBPACK_IMPORTED_MODULE_1__["PLAN_OPTIONS"].EMPTY_VALUE) {
+    errors.push({
+      label: 'Plan',
+      message: 'Select a plan to subscribe'
+    });
+  }
+
+  return errors;
 };
 
 /***/ })

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { STEPS, IContainerState, IValidationError } from '../interfaces/types'
 import { Provider, DEFAULT_STATE } from './AppContext'
-import { validateInitalStep, validateStepOne, validateStepTwo } from '../utils/validations'
+import * as validation from '../utils/validations'
 
 class AppProvider extends React.Component {
   state: Readonly<IContainerState> = DEFAULT_STATE
@@ -19,20 +19,42 @@ class AppProvider extends React.Component {
   goToStep = (selectedStep: STEPS, currentStep: STEPS) => {
     let errors: IValidationError[] = []
 
-    const { acceptShipment, name, email, password, confirmPassword, dob, phone, gender } = this.state
+    const {
+      acceptShipment,
+      name,
+      email,
+      password,
+      confirmPassword,
+      dob,
+      phone,
+      gender,
+      plan,
+      address1,
+      zipCode,
+      userState,
+      city
+    } = this.state
 
     this.setState({ errors: [] }, () => {
       switch (currentStep) {
         case STEPS.INITIAL_PAGE:
-          errors = validateInitalStep(acceptShipment)
+          errors = validation.initalStep(acceptShipment)
           break
 
         case STEPS.STEP_ONE:
-          errors = validateStepOne({ name, email, password, confirmPassword })
+          errors = validation.stepOne({ name, email, password, confirmPassword })
           break
 
         case STEPS.STEP_TWO:
-          errors = validateStepTwo({ dob, phone, gender })
+          errors = validation.stepTwo({ dob, phone, gender })
+          break
+
+        case STEPS.STEP_THREE:
+          errors = validation.stepThree({ address1, city, zipCode, userState })
+          break
+
+        case STEPS.STEP_FOUR:
+          errors = validation.stepFour(plan)
           break
 
         default:

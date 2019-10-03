@@ -42,7 +42,19 @@ export interface IStepTwoFormData {
   gender: GENDER
 }
 
-export interface IContainerState extends IStepOneFormData, IStepTwoFormData {
+export interface IStepFourData {
+  plan: PLAN_OPTIONS
+}
+
+export interface IStepThree {
+  address1: string
+  address2?: string
+  zipCode: string
+  city: string
+  userState: string
+}
+
+export interface IContainerState extends IStepOneFormData, IStepTwoFormData, IStepThree, IStepFourData {
   errors: IValidationError[]
   acceptShipment: ACCEPT_SHIPMENTS
   selectedStep: STEPS
@@ -60,4 +72,10 @@ export interface IMaskedInputField {
   value: string
   placeholder: string
   onChange: HandleInputChangeFunc
+}
+
+export enum PLAN_OPTIONS {
+  EMPTY_VALUE = '',
+  MONTHLY = 'Monthly',
+  YEARLY = 'Yearly'
 }

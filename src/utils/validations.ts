@@ -1,7 +1,14 @@
 import * as moment from 'moment'
-import { ACCEPT_SHIPMENTS, IValidationError, IStepOneFormData, IStepTwoFormData } from '../interfaces/types'
+import {
+  ACCEPT_SHIPMENTS,
+  IValidationError,
+  IStepOneFormData,
+  IStepTwoFormData,
+  PLAN_OPTIONS,
+  IStepThree
+} from '../interfaces/types'
 
-export const validateInitalStep = (acceptShipment: string) => {
+export const initalStep = (acceptShipment: string) => {
   let errors: IValidationError[] = []
 
   if (acceptShipment === ACCEPT_SHIPMENTS.EMPTY_VALUE) {
@@ -11,7 +18,7 @@ export const validateInitalStep = (acceptShipment: string) => {
   return errors
 }
 
-export const validateStepOne = ({ name, email, password, confirmPassword }: IStepOneFormData) => {
+export const stepOne = ({ name, email, password, confirmPassword }: IStepOneFormData) => {
   const errors: IValidationError[] = []
 
   if (!name) {
@@ -52,10 +59,10 @@ export const validateStepOne = ({ name, email, password, confirmPassword }: ISte
   return errors
 }
 
-export const validateStepTwo = ({ dob, phone, gender }: IStepTwoFormData) => {
+export const stepTwo = ({ dob, phone, gender }: IStepTwoFormData) => {
   const errors: IValidationError[] = []
 
-  if (!dob || !moment(dob, 'MM/DD/YYYY',true).isValid()) {
+  if (!dob || !moment(dob, 'MM/DD/YYYY', true).isValid()) {
     errors.push({
       label: 'DOB',
       message: 'Enter a valid date of birth'
@@ -79,6 +86,40 @@ export const validateStepTwo = ({ dob, phone, gender }: IStepTwoFormData) => {
   return errors
 }
 
+export const stepThree = ({ address1, city, zipCode, userState }: IStepThree) => {
+  const errors: IValidationError[] = []
+
+  if (!address1) {
+    errors.push({
+      label: 'Address1',
+      message: 'Enter your address'
+    })
+  }
+
+  if (!city) {
+    errors.push({
+      label: 'City',
+      message: 'Enter your city'
+    })
+  }
+
+  if (!zipCode) {
+    errors.push({
+      label: 'ZipCode',
+      message: 'Enter your zip code'
+    })
+  }
+
+  if (!userState) {
+    errors.push({
+      label: 'State',
+      message: 'Enter your state'
+    })
+  }
+
+  return errors
+}
+
 export const validateEmail = email => {
   const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
   return re.test(String(email).toLowerCase())
@@ -92,4 +133,16 @@ export const getErrorMessage = (errors: IValidationError[], label: string) => {
   }
 
   return null
+}
+
+export const stepFour = (plan: PLAN_OPTIONS) => {
+  const errors: IValidationError[] = []
+  if (plan === PLAN_OPTIONS.EMPTY_VALUE) {
+    errors.push({
+      label: 'Plan',
+      message: 'Select a plan to subscribe'
+    })
+  }
+
+  return errors
 }

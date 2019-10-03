@@ -41,6 +41,7 @@ const Step2: React.FC = () => (
             <option value={GENDER.FEMALE}>Female</option>
             <option value={GENDER.OTHER}>Other</option>
           </select>
+          <br />
           <span className="error-message">{getErrorMessage(errors, 'Gender')}</span>
 
           <p id="step0commands">

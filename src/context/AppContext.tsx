@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { IContext, ACCEPT_SHIPMENTS, STEPS, GENDER } from '../interfaces/types'
+import { IContext, ACCEPT_SHIPMENTS, STEPS, GENDER, PLAN_OPTIONS } from '../interfaces/types'
 
 export const DEFAULT_STATE = {
   errors: [],
@@ -11,7 +11,13 @@ export const DEFAULT_STATE = {
   confirmPassword: '',
   dob: '',
   phone: '',
-  gender: GENDER.EMPTY_VALUE
+  gender: GENDER.EMPTY_VALUE,
+  plan: PLAN_OPTIONS.EMPTY_VALUE,
+  address1: '',
+  address2: '',
+  zipCode: '',
+  city: '',
+  userState: ''
 }
 
 export const DEFAULT_VALUE = {
