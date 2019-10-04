@@ -30,16 +30,16 @@ export enum GENDER {
 }
 
 export interface IStepOneFormData {
-  name: string
-  email: string
-  password: string
-  confirmPassword: string
+  name?: string
+  email?: string
+  password?: string
+  confirmPassword?: string
 }
 
 export interface IStepTwoFormData {
-  dob: string
-  phone: string
-  gender: GENDER
+  dob?: string
+  phone?: string
+  gender?: GENDER
 }
 
 export interface IStepFourData {
@@ -47,11 +47,11 @@ export interface IStepFourData {
 }
 
 export interface IStepThree {
-  address1: string
+  address1?: string
   address2?: string
-  zipCode: string
-  city: string
-  userState: string
+  zipCode?: string
+  city?: string
+  userState?: string
 }
 
 export interface IContainerState extends IStepOneFormData, IStepTwoFormData, IStepThree, IStepFourData {

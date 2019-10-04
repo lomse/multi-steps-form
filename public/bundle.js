@@ -51962,6 +51962,46 @@ var PLAN_OPTIONS;
 
 /***/ }),
 
+/***/ "./src/utils/constants.ts":
+/*!********************************!*\
+  !*** ./src/utils/constants.ts ***!
+  \********************************/
+/*! exports provided: EMPTY_ACCEPT_SHIPMENT_ERROR_MESSAGE, EMPTY_NAME_ERROR_MESSAGE, INVALID_EMAIL_ERROR_MESSAGE, EMPTY_PASSWORD_ERROR_MESSAGE, EMPTY_CONFIRM_ERROR_MESSAGE, PASSWORDS_NOT_MATCH_ERROR_MESSAGE, EMPTY_DOB_ERROR_MESSAGE, EMPTY_PHONE_ERROR_MESSAGE, EMPTY_GENDER_ERROR_MESSAGE, EMPTY_ADDRESS_ERROR_MESSAGE, EMPTY_CITY_ERROR_MESSAGE, EMPTY_ZIP_CODE_ERROR_MESSAGE, EMPTY_STATE__ERROR_MESSAGE, EMPTY_PLAN_ERROR_MESSAGE */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EMPTY_ACCEPT_SHIPMENT_ERROR_MESSAGE", function() { return EMPTY_ACCEPT_SHIPMENT_ERROR_MESSAGE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EMPTY_NAME_ERROR_MESSAGE", function() { return EMPTY_NAME_ERROR_MESSAGE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "INVALID_EMAIL_ERROR_MESSAGE", function() { return INVALID_EMAIL_ERROR_MESSAGE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EMPTY_PASSWORD_ERROR_MESSAGE", function() { return EMPTY_PASSWORD_ERROR_MESSAGE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EMPTY_CONFIRM_ERROR_MESSAGE", function() { return EMPTY_CONFIRM_ERROR_MESSAGE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PASSWORDS_NOT_MATCH_ERROR_MESSAGE", function() { return PASSWORDS_NOT_MATCH_ERROR_MESSAGE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EMPTY_DOB_ERROR_MESSAGE", function() { return EMPTY_DOB_ERROR_MESSAGE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EMPTY_PHONE_ERROR_MESSAGE", function() { return EMPTY_PHONE_ERROR_MESSAGE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EMPTY_GENDER_ERROR_MESSAGE", function() { return EMPTY_GENDER_ERROR_MESSAGE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EMPTY_ADDRESS_ERROR_MESSAGE", function() { return EMPTY_ADDRESS_ERROR_MESSAGE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EMPTY_CITY_ERROR_MESSAGE", function() { return EMPTY_CITY_ERROR_MESSAGE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EMPTY_ZIP_CODE_ERROR_MESSAGE", function() { return EMPTY_ZIP_CODE_ERROR_MESSAGE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EMPTY_STATE__ERROR_MESSAGE", function() { return EMPTY_STATE__ERROR_MESSAGE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EMPTY_PLAN_ERROR_MESSAGE", function() { return EMPTY_PLAN_ERROR_MESSAGE; });
+var EMPTY_ACCEPT_SHIPMENT_ERROR_MESSAGE = 'Select an option to proceed.';
+var EMPTY_NAME_ERROR_MESSAGE = 'Enter your name';
+var INVALID_EMAIL_ERROR_MESSAGE = 'Enter a valid email';
+var EMPTY_PASSWORD_ERROR_MESSAGE = 'Enter your password';
+var EMPTY_CONFIRM_ERROR_MESSAGE = 'Confirm your password';
+var PASSWORDS_NOT_MATCH_ERROR_MESSAGE = 'Password do not match';
+var EMPTY_DOB_ERROR_MESSAGE = 'Enter a valid date of birth';
+var EMPTY_PHONE_ERROR_MESSAGE = 'Enter your phone number';
+var EMPTY_GENDER_ERROR_MESSAGE = 'Select your gender';
+var EMPTY_ADDRESS_ERROR_MESSAGE = 'Enter your address';
+var EMPTY_CITY_ERROR_MESSAGE = 'Enter your city';
+var EMPTY_ZIP_CODE_ERROR_MESSAGE = 'Enter your zip code';
+var EMPTY_STATE__ERROR_MESSAGE = 'Enter your state';
+var EMPTY_PLAN_ERROR_MESSAGE = 'Select a plan to subscribe';
+
+/***/ }),
+
 /***/ "./src/utils/validations.ts":
 /*!**********************************!*\
   !*** ./src/utils/validations.ts ***!
@@ -51981,6 +52021,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _interfaces_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../interfaces/types */ "./src/interfaces/types.ts");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./constants */ "./src/utils/constants.ts");
+
 
 
 var initalStep = function initalStep(acceptShipment) {
@@ -51989,7 +52031,7 @@ var initalStep = function initalStep(acceptShipment) {
   if (acceptShipment === _interfaces_types__WEBPACK_IMPORTED_MODULE_1__["ACCEPT_SHIPMENTS"].EMPTY_VALUE) {
     errors = [{
       label: 'AcceptShipment',
-      message: 'Select an option to proceed.'
+      message: _constants__WEBPACK_IMPORTED_MODULE_2__["EMPTY_ACCEPT_SHIPMENT_ERROR_MESSAGE"]
     }];
   }
 
@@ -52005,35 +52047,35 @@ var stepOne = function stepOne(_ref) {
   if (!name) {
     errors.push({
       label: 'Name',
-      message: 'Enter your name'
+      message: _constants__WEBPACK_IMPORTED_MODULE_2__["EMPTY_NAME_ERROR_MESSAGE"]
     });
   }
 
   if (!email || email && !validateEmail(email)) {
     errors.push({
       label: 'Email',
-      message: 'Enter a valid email'
+      message: _constants__WEBPACK_IMPORTED_MODULE_2__["INVALID_EMAIL_ERROR_MESSAGE"]
     });
   }
 
   if (!password) {
     errors.push({
       label: 'Password',
-      message: 'Enter your password'
+      message: _constants__WEBPACK_IMPORTED_MODULE_2__["EMPTY_PASSWORD_ERROR_MESSAGE"]
     });
   }
 
   if (!confirmPassword) {
     errors.push({
       label: 'ConfirmPassword',
-      message: 'Confirm your password'
+      message: _constants__WEBPACK_IMPORTED_MODULE_2__["EMPTY_CONFIRM_ERROR_MESSAGE"]
     });
   }
 
   if (password && confirmPassword && password !== confirmPassword) {
     errors.push({
       label: 'ConfirmPassword',
-      message: 'Password do not match'
+      message: _constants__WEBPACK_IMPORTED_MODULE_2__["PASSWORDS_NOT_MATCH_ERROR_MESSAGE"]
     });
   }
 
@@ -52048,21 +52090,21 @@ var stepTwo = function stepTwo(_ref2) {
   if (!dob || !moment__WEBPACK_IMPORTED_MODULE_0__(dob, 'MM/DD/YYYY', true).isValid()) {
     errors.push({
       label: 'DOB',
-      message: 'Enter a valid date of birth'
+      message: _constants__WEBPACK_IMPORTED_MODULE_2__["EMPTY_DOB_ERROR_MESSAGE"]
     });
   }
 
   if (!phone) {
     errors.push({
       label: 'Phone',
-      message: 'Enter your phone number'
+      message: _constants__WEBPACK_IMPORTED_MODULE_2__["EMPTY_PHONE_ERROR_MESSAGE"]
     });
   }
 
   if (!gender) {
     errors.push({
       label: 'Gender',
-      message: 'Select your gender'
+      message: _constants__WEBPACK_IMPORTED_MODULE_2__["EMPTY_GENDER_ERROR_MESSAGE"]
     });
   }
 
@@ -52078,28 +52120,28 @@ var stepThree = function stepThree(_ref3) {
   if (!address1) {
     errors.push({
       label: 'Address1',
-      message: 'Enter your address'
+      message: _constants__WEBPACK_IMPORTED_MODULE_2__["EMPTY_ADDRESS_ERROR_MESSAGE"]
     });
   }
 
   if (!city) {
     errors.push({
       label: 'City',
-      message: 'Enter your city'
+      message: _constants__WEBPACK_IMPORTED_MODULE_2__["EMPTY_CITY_ERROR_MESSAGE"]
     });
   }
 
   if (!zipCode) {
     errors.push({
       label: 'ZipCode',
-      message: 'Enter your zip code'
+      message: _constants__WEBPACK_IMPORTED_MODULE_2__["EMPTY_ZIP_CODE_ERROR_MESSAGE"]
     });
   }
 
   if (!userState) {
     errors.push({
       label: 'State',
-      message: 'Enter your state'
+      message: _constants__WEBPACK_IMPORTED_MODULE_2__["EMPTY_STATE__ERROR_MESSAGE"]
     });
   }
 
@@ -52126,7 +52168,7 @@ var stepFour = function stepFour(plan) {
   if (plan === _interfaces_types__WEBPACK_IMPORTED_MODULE_1__["PLAN_OPTIONS"].EMPTY_VALUE) {
     errors.push({
       label: 'Plan',
-      message: 'Select a plan to subscribe'
+      message: _constants__WEBPACK_IMPORTED_MODULE_2__["EMPTY_PLAN_ERROR_MESSAGE"]
     });
   }
 

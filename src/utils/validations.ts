@@ -7,12 +7,13 @@ import {
   PLAN_OPTIONS,
   IStepThree
 } from '../interfaces/types'
+import * as Constants from './constants'
 
 export const initalStep = (acceptShipment: string) => {
   let errors: IValidationError[] = []
 
   if (acceptShipment === ACCEPT_SHIPMENTS.EMPTY_VALUE) {
-    errors = [{ label: 'AcceptShipment', message: 'Select an option to proceed.' }]
+    errors = [{ label: 'AcceptShipment', message: Constants.EMPTY_ACCEPT_SHIPMENT_ERROR_MESSAGE }]
   }
 
   return errors
@@ -24,35 +25,35 @@ export const stepOne = ({ name, email, password, confirmPassword }: IStepOneForm
   if (!name) {
     errors.push({
       label: 'Name',
-      message: 'Enter your name'
+      message: Constants.EMPTY_NAME_ERROR_MESSAGE
     })
   }
 
   if (!email || (email && !validateEmail(email))) {
     errors.push({
       label: 'Email',
-      message: 'Enter a valid email'
+      message: Constants.INVALID_EMAIL_ERROR_MESSAGE
     })
   }
 
   if (!password) {
     errors.push({
       label: 'Password',
-      message: 'Enter your password'
+      message: Constants.EMPTY_PASSWORD_ERROR_MESSAGE
     })
   }
 
   if (!confirmPassword) {
     errors.push({
       label: 'ConfirmPassword',
-      message: 'Confirm your password'
+      message: Constants.EMPTY_CONFIRM_ERROR_MESSAGE
     })
   }
 
   if (password && confirmPassword && password !== confirmPassword) {
     errors.push({
       label: 'ConfirmPassword',
-      message: 'Password do not match'
+      message: Constants.PASSWORDS_NOT_MATCH_ERROR_MESSAGE
     })
   }
 
@@ -65,21 +66,21 @@ export const stepTwo = ({ dob, phone, gender }: IStepTwoFormData) => {
   if (!dob || !moment(dob, 'MM/DD/YYYY', true).isValid()) {
     errors.push({
       label: 'DOB',
-      message: 'Enter a valid date of birth'
+      message: Constants.EMPTY_DOB_ERROR_MESSAGE
     })
   }
 
   if (!phone) {
     errors.push({
       label: 'Phone',
-      message: 'Enter your phone number'
+      message: Constants.EMPTY_PHONE_ERROR_MESSAGE
     })
   }
 
   if (!gender) {
     errors.push({
       label: 'Gender',
-      message: 'Select your gender'
+      message: Constants.EMPTY_GENDER_ERROR_MESSAGE
     })
   }
 
@@ -92,28 +93,28 @@ export const stepThree = ({ address1, city, zipCode, userState }: IStepThree) =>
   if (!address1) {
     errors.push({
       label: 'Address1',
-      message: 'Enter your address'
+      message: Constants.EMPTY_ADDRESS_ERROR_MESSAGE
     })
   }
 
   if (!city) {
     errors.push({
       label: 'City',
-      message: 'Enter your city'
+      message: Constants.EMPTY_CITY_ERROR_MESSAGE
     })
   }
 
   if (!zipCode) {
     errors.push({
       label: 'ZipCode',
-      message: 'Enter your zip code'
+      message: Constants.EMPTY_ZIP_CODE_ERROR_MESSAGE
     })
   }
 
   if (!userState) {
     errors.push({
       label: 'State',
-      message: 'Enter your state'
+      message: Constants.EMPTY_STATE__ERROR_MESSAGE
     })
   }
 
@@ -140,7 +141,7 @@ export const stepFour = (plan: PLAN_OPTIONS) => {
   if (plan === PLAN_OPTIONS.EMPTY_VALUE) {
     errors.push({
       label: 'Plan',
-      message: 'Select a plan to subscribe'
+      message: Constants.EMPTY_PLAN_ERROR_MESSAGE
     })
   }
 
