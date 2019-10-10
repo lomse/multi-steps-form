@@ -1,3 +1,6 @@
+### Available on Codesandbox
+https://codesandbox.io/s/multi-steps-form-ubkws
+
 ### How to run this app
 1. `npm run i`
 2. Start the express server `npm run dev`
